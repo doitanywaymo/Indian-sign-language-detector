@@ -1,0 +1,16 @@
+venv/
+dataset/
+build/
+dist/
+captures/
+recordings/
+__pycache__/
+*.pyc
+*.npy
+*.png
+*.mp4
+*.spec
+static_sign_model.pkl
+dynamic_sign_model.h5
+dynamic_sign_model_best.h5
+.vscode/
