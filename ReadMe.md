@@ -32,7 +32,7 @@ Indian Sign Language (ISL) is the primary mode of communication for the hearing-
 - Detects **24 static alphabets** (A to Z, excluding H and J) instantly from a single camera frame
 - Detects **8 dynamic word signs** (H, J, hello, bye, namaste, practice, thank_you, sorry) from a sequence of frames
 - Displays live predictions with a colour-coded confidence score
-- Builds a sentence word by word as signs are confirmed
+- Builds a sentence sign by sign as detections are confirmed
 - Logs every confirmed detection with a timestamp
 - Runs entirely offline on a standard laptop — no internet, no cloud API, no GPU required
 
@@ -45,7 +45,7 @@ Indian Sign Language (ISL) is the primary mode of communication for the hearing-
 | Static sign detection | 24 ISL alphabets detected instantly every frame |
 | Dynamic sign detection | 8 ISL word signs detected from 30-frame sequences |
 | Live confidence meter | Colour-coded bar updating every frame |
-| Sentence builder | Confirmed signs accumulate into a readable sentence |
+| Sentence builder | Confirmed detections accumulate into a readable sentence |
 | Detection history | Timestamped log of every captured sign |
 | Corner countdown timer | Circular arc countdown after each confirmed sign |
 | Zoom in and out | Up to 3x digital zoom on the camera feed |
@@ -178,9 +178,9 @@ SLD/
 ### Dynamic Signs
 
 - 8 classes: H, J, bye, hello, namaste, practice, sorry, thank_you
-- 450 sequences per class across all persons
+- 100 sequences per class per person (4 persons)
 - Data collected from 4 different people (p1, p2, p3, p4)
-- Total: 3,600 sequences
+- Total: 3,200 sequences across 8 classes
 - File format: numpy array of shape (30, 129) saved as .npy
 - Each sequence = 30 consecutive frames, 129 features per frame
 - Folder structure: dataset/dynamic/LABEL/PERSON_ID/N.npy
@@ -446,8 +446,8 @@ Enter your person ID when prompted. Press R to redo the current sequence, Q to q
 | Dynamic Bi-LSTM | Training stopped at epoch | 72 of 150 |
 
 Dataset details:
-- Static: 200 samples per class, 24 classes, 4 persons
-- Dynamic: 450 sequences per class, 8 classes, 4 persons
+- Static: 200 samples per class per person, 24 classes, 4 persons
+- Dynamic: 100 sequences per class per person, 8 classes, 4 persons
 - Features are translation and scale normalised making them robust to hand size, position, and distance from camera
 
 ---
