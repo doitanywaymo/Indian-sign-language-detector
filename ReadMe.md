@@ -230,7 +230,7 @@ This means predictions are unaffected by where the hand is in the frame, how lar
 | Output | 24-class softmax probabilities |
 | File | static_sign_model.pkl |
 | Loaded with | joblib |
-| Training accuracy | approximately 99% |
+| Training accuracy | approximately 99.22% |
 
 ### Dynamic Model — Bidirectional LSTM
 
@@ -246,8 +246,8 @@ This means predictions are unaffected by where the hand is in the frame, how lar
 | Output | 8-class softmax probabilities |
 | File | dynamic_sign_model.h5 |
 | Loaded with | tensorflow.keras |
-| Test accuracy | 99.17% |
-| Training stopped | Early stopping at epoch 72 |
+| Test accuracy | 98.75% |
+| Training stopped | Early stopping at epoch 42 |
 
 The Bidirectional LSTM reads each 30-frame sequence in both forward and backward directions, capturing temporal patterns from both ends of the gesture motion.
 
